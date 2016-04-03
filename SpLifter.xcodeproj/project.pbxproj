@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22957AD6030E397554311060 /* Pods_SpLifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB49AE1C7634205B7AA6568 /* Pods_SpLifter.framework */; };
+		C81636A11CB0FFAD0035A6A8 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81636A01CB0FFAD0035A6A8 /* ListTableViewCell.swift */; };
 		C885CCAC1CB0465C0084AAFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C885CCAB1CB0465C0084AAFD /* AppDelegate.swift */; };
 		C885CCB31CB0465C0084AAFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C885CCB11CB0465C0084AAFD /* Main.storyboard */; };
 		C885CCB51CB0465C0084AAFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C885CCB41CB0465C0084AAFD /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		ACA9E1FC1A938ACD34EE50BA /* Pods-SpLifter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpLifter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpLifter/Pods-SpLifter.debug.xcconfig"; sourceTree = "<group>"; };
+		C81636A01CB0FFAD0035A6A8 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		C885CCA81CB0465C0084AAFD /* SpLifter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpLifter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C885CCAB1CB0465C0084AAFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C885CCB21CB0465C0084AAFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				C885CCAB1CB0465C0084AAFD /* AppDelegate.swift */,
 				C8BE2FA51CB04F2A00307141 /* LandingPageViewController.swift */,
 				C8BE2FAE1CB0D04800307141 /* ListViewController.swift */,
+				C81636A01CB0FFAD0035A6A8 /* ListTableViewCell.swift */,
 				C8BE2FAC1CB0A9F300307141 /* SettingsViewController.swift */,
 				C8BE2FAA1CB0860100307141 /* MainViewController.swift */,
 				C885CCB11CB0465C0084AAFD /* Main.storyboard */,
@@ -227,6 +230,7 @@
 				C8BE2FA61CB04F2A00307141 /* LandingPageViewController.swift in Sources */,
 				C8BE2FAF1CB0D04800307141 /* ListViewController.swift in Sources */,
 				C8BE2FAD1CB0A9F300307141 /* SettingsViewController.swift in Sources */,
+				C81636A11CB0FFAD0035A6A8 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SpLifter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wilsonding.SpLifter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,6 +359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SpLifter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wilsonding.SpLifter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
