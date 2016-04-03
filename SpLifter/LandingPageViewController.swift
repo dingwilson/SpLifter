@@ -127,8 +127,7 @@ class LandingPageViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueToMain" {
-            let nav = segue.destinationViewController as! UINavigationController
-            let sVC = nav.topViewController as! MainViewController
+            let sVC = segue.destinationViewController as! MainViewController
             
             sVC.firstName = firstName
             sVC.lastName = lastName

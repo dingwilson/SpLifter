@@ -14,6 +14,8 @@
 		C885CCB81CB0465C0084AAFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C885CCB61CB0465C0084AAFD /* LaunchScreen.storyboard */; };
 		C8BE2FA61CB04F2A00307141 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BE2FA51CB04F2A00307141 /* LandingPageViewController.swift */; };
 		C8BE2FAB1CB0860100307141 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BE2FAA1CB0860100307141 /* MainViewController.swift */; };
+		C8BE2FAD1CB0A9F300307141 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BE2FAC1CB0A9F300307141 /* SettingsViewController.swift */; };
+		C8BE2FAF1CB0D04800307141 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BE2FAE1CB0D04800307141 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		C8BE2FA51CB04F2A00307141 /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		C8BE2FA71CB075F600307141 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		C8BE2FAA1CB0860100307141 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C8BE2FAC1CB0A9F300307141 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C8BE2FAE1CB0D04800307141 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		CD9BDF3473B69A10F11FF370 /* Pods-SpLifter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpLifter.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpLifter/Pods-SpLifter.release.xcconfig"; sourceTree = "<group>"; };
 		DCB49AE1C7634205B7AA6568 /* Pods_SpLifter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpLifter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -83,6 +87,8 @@
 			children = (
 				C885CCAB1CB0465C0084AAFD /* AppDelegate.swift */,
 				C8BE2FA51CB04F2A00307141 /* LandingPageViewController.swift */,
+				C8BE2FAE1CB0D04800307141 /* ListViewController.swift */,
+				C8BE2FAC1CB0A9F300307141 /* SettingsViewController.swift */,
 				C8BE2FAA1CB0860100307141 /* MainViewController.swift */,
 				C885CCB11CB0465C0084AAFD /* Main.storyboard */,
 				C885CCB41CB0465C0084AAFD /* Assets.xcassets */,
@@ -219,6 +225,8 @@
 				C8BE2FAB1CB0860100307141 /* MainViewController.swift in Sources */,
 				C885CCAC1CB0465C0084AAFD /* AppDelegate.swift in Sources */,
 				C8BE2FA61CB04F2A00307141 /* LandingPageViewController.swift in Sources */,
+				C8BE2FAF1CB0D04800307141 /* ListViewController.swift in Sources */,
+				C8BE2FAD1CB0A9F300307141 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
