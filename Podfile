@@ -6,5 +6,7 @@ use_frameworks!
 target 'SpLifter' do
 pod 'UberRides'
 pod 'Firebase'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
 end
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LandingPageViewController: UIViewController {
 
@@ -16,45 +18,26 @@ class LandingPageViewController: UIViewController {
     let defaultDamping = 0.25
     let defaultVelocity = 3.0
     
+    let facebookReadPermissions = ["id", "first_name", "last_name", "email"]
+    
+    var firstName = ""
+    var lastName = ""
+    var email = ""
+    var image = ""
+    
+    var loginSuccess = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     
         animateButton()
-        
-        UINavigationBar.appearance().barTintColor = colorWithHexString("1d6ef1")
-    
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    // Creates a UIColor from a Hex string.
-    func colorWithHexString (hex:String) -> UIColor {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
-        
-        if (cString.hasPrefix("#")) {
-            cString = (cString as NSString).substringFromIndex(1)
-        }
-        
-        if (cString.characters.count != 6) {
-            return UIColor.grayColor()
-        }
-        
-        let rString = (cString as NSString).substringToIndex(2)
-        let gString = ((cString as NSString).substringFromIndex(2) as NSString).substringToIndex(2)
-        let bString = ((cString as NSString).substringFromIndex(4) as NSString).substringToIndex(2)
-        
-        var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
-        NSScanner(string: rString).scanHexInt(&r)
-        NSScanner(string: gString).scanHexInt(&g)
-        NSScanner(string: bString).scanHexInt(&b)
-        
-        
-        return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
     }
     
     func animateButton() {
@@ -74,16 +57,85 @@ class LandingPageViewController: UIViewController {
         )
     }
 
+    @IBAction func loginFacebookAction(sender: AnyObject) {
+        loginToFacebook()
+        
+        if loginSuccess {
+            self.performSegueWithIdentifier("segueToMain", sender: self)
+        }
+    }
     
+    func loginToFacebook() {
+        if FBSDKAccessToken.currentAccessToken() != nil {
+            //For debugging, when we want to ensure that facebook login always happens
+            //FBSDKLoginManager().logOut()
+            //Otherwise do:
+            
+            let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, first_name, last_name, email"], tokenString: FBSDKAccessToken.currentAccessToken().tokenString, version: nil, HTTPMethod: "GET")
+            req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
+                if(error == nil)
+                {
+                    self.firstName = result.valueForKey("first_name") as! String
+                    
+                    self.lastName = result.valueForKey("last_name") as! String
+                    
+                    self.email = result.valueForKey("email") as! String
+                    
+                    self.image = "http://graph.facebook.com/\(result.valueForKey("id") as! String)/picture?type=large"
+                    
+                    self.loginSuccess = true
+                }
+                else
+                {
+                    print("error \(error)")
+                }
+            })
+            
+            return
+        }
+        
+        FBSDKLoginManager().logInWithReadPermissions(self.facebookReadPermissions, handler: { (result:FBSDKLoginManagerLoginResult!, error:NSError!) -> Void in
+            if error != nil {
+                //According to Facebook:
+                //Errors will rarely occur in the typical login flow because the login dialog
+                //presented by Facebook via single sign on will guide the users to resolve any errors.
+                
+                // Process error
+                FBSDKLoginManager().logOut()
+            } else if result.isCancelled {
+                // Handle cancellations
+                FBSDKLoginManager().logOut()
+            } else {
+                self.firstName = result.valueForKey("first_name") as! String
+                
+                self.lastName = result.valueForKey("last_name") as! String
+                
+                self.email = result.valueForKey("email") as! String
+                
+                self.image = "http://graph.facebook.com/\(result.valueForKey("id") as! String)/picture?type=large"
+                
+                self.loginSuccess = true
+            }
+        })
+    }
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "segueToMain" {
+            let nav = segue.destinationViewController as! UINavigationController
+            let sVC = nav.topViewController as! MainViewController
+            
+            sVC.firstName = firstName
+            sVC.lastName = lastName
+            sVC.email = email
+            sVC.image = image
+        }
+        
     }
-    */
 
 }

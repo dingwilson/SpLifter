@@ -13,6 +13,7 @@
 		C885CCB51CB0465C0084AAFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C885CCB41CB0465C0084AAFD /* Assets.xcassets */; };
 		C885CCB81CB0465C0084AAFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C885CCB61CB0465C0084AAFD /* LaunchScreen.storyboard */; };
 		C8BE2FA61CB04F2A00307141 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BE2FA51CB04F2A00307141 /* LandingPageViewController.swift */; };
+		C8BE2FAB1CB0860100307141 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BE2FAA1CB0860100307141 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		C885CCB71CB0465C0084AAFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C885CCB91CB0465C0084AAFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8BE2FA51CB04F2A00307141 /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
+		C8BE2FA71CB075F600307141 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		C8BE2FAA1CB0860100307141 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CD9BDF3473B69A10F11FF370 /* Pods-SpLifter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpLifter.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpLifter/Pods-SpLifter.release.xcconfig"; sourceTree = "<group>"; };
 		DCB49AE1C7634205B7AA6568 /* Pods_SpLifter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpLifter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,10 +83,12 @@
 			children = (
 				C885CCAB1CB0465C0084AAFD /* AppDelegate.swift */,
 				C8BE2FA51CB04F2A00307141 /* LandingPageViewController.swift */,
+				C8BE2FAA1CB0860100307141 /* MainViewController.swift */,
 				C885CCB11CB0465C0084AAFD /* Main.storyboard */,
 				C885CCB41CB0465C0084AAFD /* Assets.xcassets */,
 				C885CCB61CB0465C0084AAFD /* LaunchScreen.storyboard */,
 				C885CCB91CB0465C0084AAFD /* Info.plist */,
+				C8BE2FA71CB075F600307141 /* BridgingHeader.h */,
 			);
 			path = SpLifter;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8BE2FAB1CB0860100307141 /* MainViewController.swift in Sources */,
 				C885CCAC1CB0465C0084AAFD /* AppDelegate.swift in Sources */,
 				C8BE2FA61CB04F2A00307141 /* LandingPageViewController.swift in Sources */,
 			);
@@ -330,6 +336,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wilsonding.SpLifter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SpLifter/BridgingHeader.h;
 			};
 			name = Debug;
 		};
@@ -342,6 +349,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wilsonding.SpLifter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SpLifter/BridgingHeader.h;
 			};
 			name = Release;
 		};

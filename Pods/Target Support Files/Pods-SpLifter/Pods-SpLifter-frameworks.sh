@@ -84,10 +84,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-SpLifter/Bolts.framework"
+  install_framework "Pods-SpLifter/FBSDKCoreKit.framework"
+  install_framework "Pods-SpLifter/FBSDKLoginKit.framework"
   install_framework "Pods-SpLifter/Firebase.framework"
   install_framework "Pods-SpLifter/UberRides.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-SpLifter/Bolts.framework"
+  install_framework "Pods-SpLifter/FBSDKCoreKit.framework"
+  install_framework "Pods-SpLifter/FBSDKLoginKit.framework"
   install_framework "Pods-SpLifter/Firebase.framework"
   install_framework "Pods-SpLifter/UberRides.framework"
 fi
