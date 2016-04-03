@@ -150,13 +150,18 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapView
      // Pass the selected object to the new view controller.
         
         if segue.identifier == "segueToList" {
-            let nav = segue.destinationViewController as! UINavigationController
-            let sVC = nav.topViewController as! ListViewController
+            let navVC = segue.destinationViewController as! UINavigationController
+            
+            let sVC = navVC.topViewController as! ListViewController
             
             sVC.firstName = firstName
             sVC.lastName = lastName
             sVC.email = email
             sVC.image = image
+            sVC.startLat = startLat
+            sVC.startLong = startLong
+            sVC.endLat = endLat
+            sVC.endLong = endLong
         }
         
      }

@@ -10,6 +10,11 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var riderImage: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var walkingDistance: UILabel!
+    @IBOutlet weak var cost: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

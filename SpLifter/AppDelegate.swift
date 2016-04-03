@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import UberRides
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()
+        
+        RidesClient.sharedInstance.configureClientID("UUsqRc1sN_XWRY3HqoHE6syiiYmb9IqX")
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
